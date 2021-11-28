@@ -11,10 +11,8 @@ import { UserRepositorier } from "../application/ports/userRepositorier";
 import { User } from "../domain/user";
 import { UserCriteria } from "../domain/userCriteria";
 
-const NUMBER_OF_USERS = 30;
-
 const generateRandomUsers = (amount: number): User[] => {
-  return new Array(amount).map(() => ({
+  return [...Array(amount)].map(() => ({
     name: generateRandomName(),
     age: generateRandomNumber(110),
     score: generateRandomNumber(10000),
@@ -32,6 +30,9 @@ function convertUserCriteriaFieldToRawCb({
 
     case "not":
       return (user: User) => user[fieldName] !== value;
+
+    case "includes":
+      return (user: User) => `${user[fieldName]}`.includes(`${value}`);
 
     case "greater or equal than":
       return (user: User) => user[fieldName] >= value;
@@ -103,8 +104,8 @@ function convertUserCriteriaToRawCbs(userCriteria: UserCriteria) {
 export class InMemoryUserRepository implements UserRepositorier {
   users: User[];
 
-  constructor() {
-    this.users = generateRandomUsers(NUMBER_OF_USERS);
+  constructor(numberOfRandomUsers = 30) {
+    this.users = generateRandomUsers(numberOfRandomUsers);
   }
 
   meetCriteria(userCriteria: UserCriteria): User[] {

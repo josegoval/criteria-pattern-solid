@@ -4,7 +4,8 @@ export type FieldOperatorCriteria =
   | "less than"
   | "less or equal than"
   | "equal"
-  | "not";
+  | "not"
+  | "includes";
 
 export type CriteriaField<FieldNameType> = {
   fieldName: FieldNameType;
