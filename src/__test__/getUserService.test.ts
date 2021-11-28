@@ -44,7 +44,7 @@ it("meet criteria correctly", () => {
         age >= MAX_EXCLUSIVE_AGE ||
         score <= MIN_EXCLUSIVE_SCORE ||
         score > MAX_INCLUSIVE_SCORE ||
-        name.includes(INCLUDES_NAME)
+        !name.includes(INCLUDES_NAME)
     );
 
   expect(unexpectedUser).toBe(undefined);
