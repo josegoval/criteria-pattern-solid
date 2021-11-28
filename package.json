@@ -1,0 +1,20 @@
+{
+  "name": "criteria-pattern-solid",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon --config nodemon.json src/index.ts",
+    "dev:debug": "nodemon --config nodemon.json --inspect-brk src/index.ts"
+  },
+  "devDependencies": {
+    "typescript": "^4.5.2"
+  },
+  "dependencies": {
+    "@types/faker": "^5.5.9",
+    "@types/node": "^16.11.10",
+    "faker": "^5.5.3",
+    "nodemon": "^2.0.15",
+    "ts-node": "^10.4.0"
+  }
+}
