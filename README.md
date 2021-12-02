@@ -5,7 +5,7 @@ This is a simple project which applies criteria pattern over a solid structure.
 The goal is to filter users (or any objects) using Criteria objects, leaving the filter implementation of the actual Criteria to the repository implementation.
 
 ## Use case
-The project only covers the next use case: getUsersService, where the only available method is searchByCriteria.
+The project only covers the next use case: `getUsersService`, where the only available method is `searchByCriteria`.
 
 ## Example
 
