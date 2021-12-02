@@ -10,6 +10,11 @@ The project only covers the next use case: `getUsersService`, where the only ava
 ## Example
 
 ```ts
+import { PaginationCriteria } from "./internal/shared/domain/criteria";
+import { GetUserService } from "./internal/users/application/getUsers";
+import { UserCriteria } from "./internal/users/domain/userCriteria";
+import { InMemoryUserRepository } from "./internal/users/infrastucture/inMemoryUserRepository";
+
 const NUMBER_OF_RANDOM_USERS = 50000;
 const userRepository = new InMemoryUserRepository(NUMBER_OF_RANDOM_USERS);
 const getUserService = new GetUserService(userRepository);
